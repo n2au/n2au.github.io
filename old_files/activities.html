@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dev Launchers</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="icon" type="image/png" href="./images/dev-launchers-logo.png">
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM Plex Mono&subset=latin"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      body {
+        background-color: black;
+      }
+
+      #title {
+        font-size: 3rem;
+
+        color: white;
+
+        margin-left: 1%;
+      }
+
+      .page-description {
+        background-color: rgb(200, 200, 200);
+        color: black;
+        width: 90%;
+        margin: 2%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1%;
+      }
+
+      #activity-area {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: transparent;
+
+        padding: 1%;
+      }
+
+      .activity-section {
+        width: 97.5%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1%;
+        margin-bottom: 1%;
+      }
+
+      .activity-area__header {
+        font-size: 2rem;
+      }
+
+      #activity-area__novice {
+        /* background-color:yellow; */
+        color: yellow;
+      }
+
+      #activity-area__intermediate {
+        /* background-color:orange; */
+        color: orange;
+      }
+
+      #activity-area__advanced {
+        /* background-color:red; */
+        color: red;
+      }
+    </style>
+    <script type="text/javascript">
+      // Contains a list of activities, grouped into
+      //    Novice, Intermediate, and Advanced
+      //    categories.
+      const activities = {
+        novice: [
+          {
+            title: "Loot Boxes - Variables Intro",
+            description: "Set a variable and win a prize!",
+            sandboxUrl:
+              "https://codesandbox.io/s/activityloot-boxesvariables-intro-kecbj?fontsize=14&module=%2FREADME.md",
+            githubUrl: ""
+          },
+          {
+            title: "Virtual Pet - Integer Feeding",
+            description:
+              "Learn to set numerical variables to feed a virtual pet.",
+            sandboxUrl:
+              "https://codesandbox.io/s/activityvirtual-petinteger-feeding-6cvo0?fontsize=14&module=%2FREADME.md",
+            githubUrl: ""
+          },
+          {
+            title: "Loot Boxes - Multiple Variables",
+            description: "Set multiple variables to win multiple prizes!",
+            sandboxUrl:
+              "https://codesandbox.io/s/activityloot-boxesmultiple-variables-r4lbx?fontsize=14&module=%2FREADME.md",
+            githubUrl: ""
+          },
+          {
+            title: "Title Screen - Sun Position",
+            description:
+              "Learn about screen space by changing the position of the sun!",
+            sandboxUrl:
+              "https://codesandbox.io/s/activitytitle-screensun-position-bvt7z?fontsize=14&module=%2FREADME.md",
+            githubUrl: ""
+          },
+          {
+            title: "Title Screen - Customize It",
+            description: "Play around and create your very own title screen!",
+            sandboxUrl:
+              "https://codesandbox.io/s/activitytitle-screencustomize-it-zs9xp?fontsize=14&module=%2FREADME.md",
+            githubUrl: ""
+          },
+          {
+            title: "Stage Maker - Array Intro",
+            description:
+              "Modify a stage to help your character reach their goal!",
+            sandboxUrl:
+              "https://codesandbox.io/s/activitystage-makerarray-intro-hye31?fontsize=14&module=%2FREADME.md",
+            githubUrl: ""
+          },
+          {
+            title: "Stage Maker - Multi Dimensional",
+            description:
+              "Modify a more complex stage to help your character reach their goal!",
+            sandboxUrl:
+              "https://codesandbox.io/s/activitystage-makermulti-dimensional-3e4z0?fontsize=14&module=%2FREADME.md",
+            githubUrl: ""
+          },
+          {
+            title: "Stage Maker - Customize It",
+            description: "Create your own stage!",
+            sandboxUrl:
+              "https://codesandbox.io/s/activitystage-makercustomize-it-stvqt?fontsize=14&module=%2FREADME.md",
+            githubUrl: ""
+          }
+        ],
+        intermediate: [
+          {
+            title: "Staircase - Array Sort",
+            description: "Sort an array!",
+            sandboxUrl:
+              "https://codesandbox.io/s/activitystaircasearray-sort-rjurf?fontsize=14&module=%2FREADME.md",
+            githubUrl: ""
+          },
+          {
+            title: "Block Bots - Player vs Machine",
+            description:
+              "Pit your programmable bot against a series of bots with increasing difficulty",
+            sandboxUrl:
+              "https://codesandbox.io/s/activityblock-botsplayer-vs-machine-jzdh4?fontsize=14&module=%2FREADME.md",
+            githubUrl: ""
+          },
+          {
+            title: "Block Bots - Player vs Player",
+            description: "Pit your programmable bot against another player",
+            sandboxUrl:
+              "https://codesandbox.io/s/activityblock-botsplayer-vs-player-xhc1k?fontsize=14&module=%2FREADME.md",
+            githubUrl: ""
+          }
+        ],
+        advanced: []
+      };
+      function renderAllActivities() {
+        console.log("rendering all");
+        // We have three different levels of activities, and want to render them in order
+        //    1) render Novice activities
+        //    2) render Intermediate activities
+        //    3) render Advanced activities
+        /* Novice activities */
+        renderActivityListInto(activities.novice, "activity-area__novice");
+        /* Intermediate activities */
+        renderActivityListInto(
+          activities.intermediate,
+          "activity-area__intermediate"
+        );
+        /* Advanced activities */
+        renderActivityListInto(activities.advanced, "activity-area__advanced");
+      }
+      function renderActivityListInto(activityList, targetElementId) {
+        // Grab a reference to our activity area element and store it in a variable
+        let activityAreaElement = document.getElementById(targetElementId);
+        for (let i = 0; i < activityList.length; i++) {
+          let activityData = activityList[i];
+          let activityElement = document.createElement("div");
+          activityElement.className = "entry";
+          activityElement.innerHTML = `
+          <div class="entry-title">
+            ${activityData.title}
+          </div>
+          <div class="entry-description">
+            ${activityData.description}
+          </div>
+        `;
+          if (activityData.sandboxUrl != "") {
+            activityElement.innerHTML += `
+            <a class="entry-sandbox-url" href="${
+              activityData.sandboxUrl
+            }" target="_blank">
+              <div class="entry-button">
+                Open Sandbox
+              </div>
+            </a>
+          `;
+          }
+          if (activityData.githubUrl != "") {
+            activityElement.innerHTML += `
+            <a class="entry-github-url" href="${
+              activityData.githubUrl
+            }" target="_blank">
+              <div class="entry-button">
+                Open Github
+              </div>
+            </a>
+          `;
+          }
+          activityAreaElement.appendChild(activityElement);
+        }
+
+        // Add a line break to push the container down a bit (purely visual)
+        activityAreaElement.appendChild(document.createElement("br"));
+      }
+      window.onload = function() {
+        // Call initializing function to render all activities
+        console.log("page load");
+        renderAllActivities();
+      };
+    </script>
+  </head>
+  <body>
+    <header>
+      <div id="logo-container">
+        <img
+          src="./images/logo-small.png"
+          style="position:relative;top:-.3rem;float:left;clear:none;height:2rem;z-index:10;"
+        />
+      </div>
+      <!--<div class="container">-->
+      <div class="header-pusher"></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">[Home]</a></li>
+          <li><a href="games.html">[Games]</a></li>
+          <li><a href="activities.html">[Activities]</a></li>
+          <li><a href="project-templates.html">[Project Templates]</a></li>
+          <li><a href="resources.html">[Resources]</a></li>
+        </ul>
+      </nav>
+      <!--</div>-->
+    </header>
+    <div id="title">
+      Activities
+    </div>
+    <div class="page-description">
+      // These activities are meant to familiarize students with the concepts
+      and tools needed to begin creating games with Dev Launchers.
+    </div>
+    <div id="activity-area">
+      <div id="activity-area__novice" class="activity-section">
+        <div class="activity-area__header">
+          Novice Activities
+        </div>
+      </div>
+      <div id="activity-area__intermediate" class="activity-section">
+        <div class="activity-area__header">
+          Intermediate Activities
+        </div>
+      </div>
+      <div id="activity-area__advanced" class="activity-section">
+        <div class="activity-area__header">
+          Advanced Activities
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
