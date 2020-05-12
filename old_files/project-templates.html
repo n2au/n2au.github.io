@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dev Launchers</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="icon" type="image/png" href="./images/dev-launchers-logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM Plex Mono&subset=latin"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      html {
+        display: flex;
+        width: 100%;
+        min-height: 100%;
+        overflow: auto;
+      }
+
+      body {
+        flex: 1;
+        margin: 0px;
+        background: #222;
+        font-weight: 300;
+        background-image: url("cool-background.png");
+        width: 100%;
+        height: auto;
+        min-height: 100%;
+        overflow: auto;
+        background-color: black;
+      }
+
+      #title {
+        font-size: 3rem;
+
+        color: white;
+
+        margin-left: 1%;
+      }
+
+      .page-description {
+        background-color: rgb(200, 200, 200);
+        color: black;
+        width: 90%;
+        margin: 2%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1%;
+      }
+
+      #activity-area {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: transparent;
+
+        padding: 1%;
+      }
+
+      .content-section {
+        width: 97.5%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1%;
+        margin-bottom: 1%;
+      }
+
+      .content-section__header {
+        font-size: 2rem;
+        color: white;
+      }
+    </style>
+    <script type="text/javascript">
+      // Contains a list of project templates
+      const projectTemplates = {
+        simple: [
+          {
+            title: "Virtual Pet",
+            description:
+              "A simple virtual pet base project. A cute animal moves back and forth within the screen space, interacts with a ball, and eats food.",
+            sandboxUrl:
+              "https://codesandbox.io/s/project-template-virtual-pet-1oyty?fontsize=14&module=%2F.DO_NOT_TOUCH%2Fmain.js",
+            githubUrl: ""
+          },
+          {
+            title: "Space Arcade",
+            description: "A twist on the classic space shooter genre!",
+            sandboxUrl:
+              "https://codesandbox.io/s/project-templatespace-arcade-k84gf?fontsize=14&hidenavigation=1&module=%2Findex.js&theme=dark",
+            githubUrl: ""
+          },
+          {
+            title: "Pong",
+            description:
+              "A simple recreation of the physics involved with the classic Pong game.",
+            sandboxUrl:
+              "https://codesandbox.io/s/project-template-pong-opot8?fontsize=14&module=%2Findex.js",
+            githubUrl: ""
+          },
+          {
+            title: "Platformer",
+            description:
+              "A simple recreation of the physics involved with a basic platformer game.",
+            sandboxUrl:
+              "https://codesandbox.io/s/project-template-platformer-ky2et?fontsize=14&module=%2Findex.js",
+            githubUrl: ""
+          },
+          {
+            title: "Simple Physics Skeleton - One Way Joint Constraints",
+            description:
+              "An incredibly simple example of joint constraints, limited to joints affecting each other in one direction.",
+            sandboxUrl:
+              "https://codesandbox.io/s/project-templateone-way-joint-constraints-vdily?fontsize=14",
+            githubUrl: ""
+          }
+        ]
+      };
+      function renderAllActivities() {
+        console.log("rendering all");
+        renderActivityListInto(
+          projectTemplates.simple,
+          "template-area__simple"
+        );
+      }
+      function renderActivityListInto(activityList, targetElementId) {
+        // Grab a reference to our activity area element and store it in a variable
+        let activityAreaElement = document.getElementById(targetElementId);
+        for (let i = 0; i < activityList.length; i++) {
+          let activityData = activityList[i];
+          let activityElement = document.createElement("div");
+          activityElement.className = "entry";
+          activityElement.innerHTML = `
+          <div class="entry-title">
+            ${activityData.title}
+          </div>
+          <div class="entry-description">
+            ${activityData.description}
+          </div>
+        `;
+          if (activityData.sandboxUrl != "") {
+            activityElement.innerHTML += `
+            <a class="entry-sandbox-url" href="${
+              activityData.sandboxUrl
+            }" target="_blank">
+              <div class="entry-button">
+                Open Sandbox
+              </div>
+            </a>
+          `;
+          }
+          if (activityData.githubUrl != "") {
+            activityElement.innerHTML += `
+            <a class="entry-github-url" href="${
+              activityData.githubUrl
+            }" target="_blank">
+              <div class="entry-button">
+                Open Github
+              </div>
+            </a>
+          `;
+          }
+          activityAreaElement.appendChild(activityElement);
+        }
+
+        // Add a line break to push the container down a bit (purely visual)
+        activityAreaElement.appendChild(document.createElement("br"));
+      }
+      window.onload = function() {
+        // Call initializing function to render all activities
+        console.log("page load");
+        renderAllActivities();
+      };
+    </script>
+  </head>
+  <body>
+    <header>
+      <div id="logo-container">
+        <img
+          src="./images/logo-small.png"
+          style="position:relative;top:-.3rem;float:left;clear:none;height:2rem;z-index:10;"
+        />
+      </div>
+      <!--<div class="container">-->
+      <div class="header-pusher"></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">[Home]</a></li>
+          <li><a href="games.html">[Games]</a></li>
+          <li><a href="activities.html">[Activities]</a></li>
+          <li><a href="project-templates.html">[Project Templates]</a></li>
+          <li><a href="resources.html">[Resources]</a></li>
+        </ul>
+      </nav>
+      <!--</div>-->
+    </header>
+    <div id="title">
+      Project Templates
+    </div>
+    <div class="page-description">
+      // Project Templates are where game projects begin. They'll provide the
+      generic structure and base logic, so you can focus on what makes your game
+      special!
+    </div>
+    <div id="activity-area">
+      <div id="template-area__simple" class="content-section">
+        <div class="content-section__header">
+          Simple
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
