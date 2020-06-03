@@ -1,2 +1,4 @@
-# n2au.github.io
-DSC180 Capstone
+# This repo contains the Dev Launchers website
+https://devlaunchers.com/
+
+It is deployed automatically when changes are made to the master branch

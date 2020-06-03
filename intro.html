@@ -4,7 +4,6 @@
     <title>Fair Policing</title>
 
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <link rel="icon" type="image/png" href="./images/dev-launchers-logo.png" />
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
       rel="stylesheet"
@@ -34,25 +33,274 @@
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="intro.html">Introduction</a></li>
-          <li><a href="methodology.html">Methodology</a></li>
-          <li class="dropdown">
-            <button class="dropbtn">Racial Groups</button>
-            <div class="dropdown-content">
-              <a href="asian.html">Asian</a>
-              <a href="black.html">Black</a>
-              <a href="hispanic.html">Hispanic</a>
-              <a href="white.html">White</a>
-            </div>
-          </li>
+          <li><a href="intro.html">Overview</a></li>
+          <li><a href="analysis.html">Analysis</a></li>
           <li><a href="appendix.html">Appendix</a></li>
           <li><a href="resources.html">Resources</a></li>
         </ul>
       </nav>
-      <!--</div>-->
     </header>
 
-    <footer>
+    <div style="text-align:center;">
+      <h1>Introduction</h1>
+      <div>
+        <div>
+          <p>
+            This research examines how the presence of each race in the media
+            affects police officers' behavior towards them. For this project, we
+            are focusing on four races: white drivers, black drivers, hispanic
+            drivers and asian drivers.
+          </p>
+          <p>
+            In today's society, media in all forms plays a significant role in
+            our daily lives through its part in constructing social norms and
+            shaping subconscious biases. We aim to quantify how an event
+            influences the population by using how often it is mentioned on
+            Google. We want to create a time series of Google searches regarding
+            an event and see whether the fluctuations in the number of mentions
+            (especially those after a major event related to race) causes an
+            increase or decrease in the amount of stops or causes a disparity in
+            post stop outcomes. With the world becoming so dependent on
+            technology, the impacts of mass media are profound as it impacts a
+            person's beliefs, assumptions and public ideology.
+          </p>
+          <p>
+            Additionally, we analyze whether people talking about race, and
+            therefore more racial cognizance, leads to more or less disparity.
+            During their research, Harper and Philo expanded on how they "found
+            a relationship between the prior exposure to information, often
+            related to strength of attitude, on the subject and the degree to
+            which the information impacted on beliefs and opinions"
+            (Kulaszewicz, 332). The completion of this project aims to fill in
+            the gap that exists between the amount of mentions per race-related
+            event and the effects of racial disparity on police stops and post
+            stop outcomes.
+          </p>
+          <p>
+            As of now, previous studies have looked at how and whether the
+            number of searches of certain words that are affiliated with unique
+            races have caused an impact in police relations with the race.
+            Specifically, we looked at the "Racism and the Media: A Textual
+            Analysis", conducted by Kassia E. Kulaszewicz, in which they focused
+            on "the impacts that media has on racism and considered the question
+            of whether or not media reinforces racism in communities" when
+            comparing between white and black Americans (Kulaszewicz, 4). They
+            found that the amount of times a word associated with 'black'
+            Americans was used three times as much compared to a word associated
+            with 'white' Americans in the media reports. Kulaszewicz mentions
+            how "the over usage of the word "black" becomes a racial
+            microaggression because it can condition the mind to associate the
+            word with negative connotation" (Kulaszewicz, 3). Overall, this
+            study illustrated a correlation between conscious and unconscious
+            racism and its reinforcement through media and its many platforms.
+          </p>
+          <table>
+            <tr>
+              <th class = "race">Race</th>
+              <th class = "event">Event</th>
+              <th class = "date">Date</th>
+              <th class = "connotation">Connotation</th>
+            </tr>
+            <tr>
+              <td rowspan="2", class = "race">Asian</td>
+              <td>Crazy Rich Asians</td>
+              <td>8/15/2018</td>
+              <td>+</td
+            </tr>
+            <tr>
+              <td>North Korean War Threats</td>
+              <td>4/1/2017</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td rowspan="2", class = "race">Black</td>
+              <td>Black Panther</td>
+              <td>2/16/2018</td>
+              <td>+</td>
+            </tr>
+            <tr>
+              <td>Ray Rice Scandal</td>
+              <td>9/8/2014</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td rowspan="2", class = "race">Hispanic</td>
+              <td>Coco</td>
+              <td>11/22/2017</td>
+              <td>+</td>
+            </tr>
+            <tr>
+              <td>DACA</td>
+              <td>11/22/2017</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td rowspan = "2", class = "race">White</td>
+              <td>Leonardo DiCaprio's Oscar Speech</td>
+              <td>2/28/2016</td>
+              <td>+</td>
+            </tr>
+            <tr>
+              <td>Unite the Right Rally</td>
+              <td>8/12/2017</td>
+              <td>-</td>
+            </tr>
+
+          </table>
+          <p>
+            In order to pursue our investigation, we decided to take one
+            negative event and one positive event related to each race. For
+            black drivers, we chose Black Panther (the movie) as the positive
+            event and Ray Rice's domestic abuse scandal as the negative event.
+            For white drivers, the Unite the Right rally (negative) and Leonardo
+            DiCaprio's Oscars reception (positive), for Hispanic drivers, the
+            positive event was Coco (the movie) and the negative event was DACA,
+            and for Asian drivers, Crazy Rich Asians was used as the positive
+            event and the North Korean threat of war was used for the negative
+            event. Specifically, we looked at a four month window for each
+            event, analyzing Google Trends search counts for the two months
+            before and after to quantify how much publicity the event was
+            getting. Additionally, we use the San Diego Police Stops dataset
+            that holds the data for every stop done by an officer in San Diego
+            and the results (i.e. whether a search occurred, an arrest was
+            made). We used an equal amount pre- and post- the events because we
+            wanted to see whether the stop rates changed in San Diego for either
+            the negative or positive events that occured nationally.
+          </p>
+          <br />
+        </div>
+      </div>
+    <hr />
+    <h1>Data</h1>
+    <h3>Stops Data</h3>
+    <p>
+        When looking into the stops data, we felt that due to our personal connection to San Diego, 
+        as well as our familiarity with the dataset, it was pertinent to look at stops 
+        within San Diego when attempting to answer the question of whether or not the national 
+        media has an affect on the actions of police officers, and therefore the stop rates of the 
+        races associated with these events. For this experiment, however, we will only need a subset 
+        of this data: the columns corresponding to the race of the subject (in order to calculate 
+        the stop rates by race), the date of the stop (in order to align it with the search trends 
+        of the event and assess the events impact on stop rates), and the service area/beat 
+        (in order to analyze how rates are affected differently by these events location to location). 
+        Note that we will also be retaining the 'stop_id' column in order to maintain each stop's 
+        unique identifier for internal purposes.
+    </p>
+    <p>
+        However, despite these columns being fairly convenient in terms of comprehensively containing 
+        the information that we wish to extract from them, they are not without their issues. For instance, 
+        while the ID, date, and location of the stop are entered for all instances, there are a few issues 
+        regarding the missingness of the subject's race (.154% of stops in 2014, .2183% in 2015, .1217% in 
+        2016, .1238% from 2017 through June of 2018, and 0% from July of 2018 through 2019). Due to the 
+        small nature of these missing percentages, however, we have made the decision that these entries 
+        can be ignored. 
+    </p>
+    <p>
+      The majority of issues with our stops data however are due to the nature of the data collection; 
+      from 2017 through June of 2018, the data was collected in one way by police officers, 
+      but after June new laws mandated a change to a different format. While this did not have 
+      an impact on the IDs or dates of our stops, it did create issues with regards to the location 
+      of the stop and the subject's race. In terms of the location of the stop, data inputting changed 
+      from using police service area originally to using police beat, a more fine grained description 
+      of where the stop was being made. Unfortunately, due to not having this fine of detail on the 
+      original data, our only recourse was to make the newer data coarser, as we changed the beats to 
+      the service areas that contain them. A similar issue occurred when working with the race columns, 
+      as the data pre-law-change had a large variety of race codes (e.g. 'J' for Japanese, 'K' for Korean), 
+      while the newer data had far simpler races (e.g. 'Asian'). Again, we were forced to go with the 
+      coarser version of the data, and we mapped the complex race codes to their less complicated counterparts.
+    </p>
+    <p>
+      We then wanted to investigate the stop data's intricacies within the specific windows we would 
+      be analyzing, by looking at the specific counts of stops for each race by month. In general amongst 
+      all the windows, we found that the majority of stops month-to-month were of white and hispanic drivers, 
+      with Middle Eastern/South Asian, Native American, and Pacific Islander having very low representation 
+      from a month-to-month lens. Furthermore, four windows never broke over 9000 stops in a month 
+      (Black Panther, Coco, DACA, and Unite the Right), while two windows broke 12000 stops in a month 
+      (Crazy Rich Asians which broke 14000 and Ray Rice).
+    </p>
+    <p>
+      Breaking down these stops window to window we arrived at the following observations. 
+      For the window around Black Panther (Appendix A: Figure A1), there were far more stops in 
+      January than in the other 2 full months, while there were obviously far less stops in December 
+      or April as these were only partially contained in the window. Also interestingly enough, in the 
+      month where our event occurred, February, there were approximately the same number of stops as March, 
+      despite having 3 fewer days. For the window around Ray Rice (Appendix A: Figure A7), the number of 
+      stops in the month that our event occurred in was substantially less than in the previous month 
+      (August), while being just slightly more than the number in October. For the window surrounding Coco 
+      (Appendix A: Figure A2), the number of stops per month goes down within the window for the full 
+      months, and amongst full months is the least in the month following Coco's release (December). 
+      For the window surrounding DACA (Appendix A: Figure A4), there was also a general downwards 
+      trend from full month to full month. For the window surrounding Unite the Right (Appendix A: 
+      Figure A8), the number of stops peaked in August, the stop event month, and was lower in the 
+      surrounding months. For the window surrounding Leonardo DiCaprio (Appendix A: Figure A5), 
+      the number of stops peaked in our target month (February), despite February having the least 
+      number of days. For the window surrounding Crazy Rich Asians (Appendix A: Figure A3), this 
+      window was the only one to break 14000 stops in a month. It also experienced a downward 
+      trend in stops per month, with FAR less in both September and October, and most interestingly, 
+      far less stops in June than in October despite having a similar number of days in the window. 
+      For the window surrounding threats regarding war with North Korea (Appendix A: Figure A6), the 
+      majority of stops happen in March, with similar numbers for February, April, and May, and only 
+      one day's worth of data in June.      
+    </p>
+    <h3>Google Trends Data</h3>
+    <p>
+      When trying to get the number of searches per day for each of the events we chose, 
+      we turned to the Google Trends interface for the most accurate counts of interest per day. 
+      Due to the abundance of searches per day, Google released an anonymized sample of actual search 
+      requests and amounts made per day in the form of its Google Trends interface. Because only samples 
+      of data are provided, the search values are normalized based on the "total searches of geography 
+      and time range it represents [as compared] to their relative popularity" (Trends Help). 
+      Once that is completed, the values are scaled to range between 0 to 100 and are established 
+      from the term's proportion to the total searches of all topics. This creates Google's 
+      "interest over time" for each search term.
+    </p>
+    <p>
+        For the trends data, the data ingestion is fairly straightforward, as we 
+        used a script written by Ned Bingham that reads in the daily trends data and 
+        outputs a csv with the columns "date" and "counts". One thing that we had to 
+        change to fix our analysis was the time zone as we wanted to look at the amount of 
+        searches based off of Pacific Standard Time for each event. Another was that the Google 
+        searches data has a valuation of non numerical values where it puts "&lt1". As of now, we 
+        coerced the values into becoming zeroes and graphed based off of the zero valuation. This 
+        was done because the rest of the values are whole numbers so we inferred them to be zeroes 
+        but some can say because they were not explicitly zeroes, they were values between 0 and 1. 
+        For the next checkpoint, we will be looking into the values and finding a way to impute 
+        these values. Because Google Trends eradicates repeated searches from the same individual, 
+        we did not have to take duplicate values into consideration and took the values provided 
+        from the scraped csv for its face value. 
+    </p>
+    <p>
+       To investigate how the interest changes over time for each search term we chose a two-month 
+       window, before and after the event, as it gives us a sufficient idea of how the interest 
+       rises and falls. Furthermore, this four month window allows us to investigate enough data 
+       about what stop rates for a given race looked like pre-event and post-event. Also, due to 
+       how quickly interest fades after and event occurs we found that outside of the two month 
+       period after an event occurs interest falls close to zero relative to when it was most 
+       popular thus including a larger time post-event would not yield true interest as it is 
+       all compared against the peak. One reason why events may fall close to zero before the 
+       event occured may be because there is no interest for the event previous to its occurrence.
+       Based on the way that the Google Trends data is formatted, we wanted to compare the interest 
+       over time for the different events per race and compare the positive versus negative events 
+       as seen in the Appendix in the Interest Across Events Per Race section. An example of this 
+       can be seen with the Interest Across Events for Hispanic Drivers chart where we compare 
+       DACA and the release of the movie Coco. For the chart 'Interest Across Events For Hispanic 
+       Drivers' (Figure E1, Appendix E), we can see that although DACA had the greater spike of 
+       interest during September 2016, Coco the movie was more consistently searched including 
+       before the event occured (i.e during when the teasers were released) and post the release 
+       of the movie. For 'Interest Across Events For Black Drivers' (Figure E2, Appendix E), we 
+       can see that not only was Black Panther more consistently searched, it had the larger 
+       spikes (i.e. more searches) which means that there was more interest in the event. 
+       Similarly, for 'Interest Across Events For Asian Drivers' (Figure E3, Appendix E), 
+       Crazy Rich Asians had more interest over time and the greater spike in searches. 
+       For 'Interest Across Events for White Drivers' (Figure E4, Appendix E), the Unite 
+       the Right Rally seemed to have two minor spikes of interest yet Leonardo DiCaprio's 
+       Oscars Speech resulted in great interest previous to his speech and even more post the 
+       event's occurrence. 
+    </p>
+    <h3>Census Data</h3>
+    <p>To get an idea of what the racial demographic of San Diego looks like, we used data gathered by the United States Census Bureau. To create a workable table (as shown in Appendix G) we spatially joined the census population dataset to the police stops dataset, through ArcGIS, as once we plotted the census population dataset as centroids on top of the police beats, split by service area, the ArcGIS was able to join spatially using the coordinates of the one service area to many centroids join. One thing to take note of was that when joining the two dataframes, I chose to count the centroids fully inside the service area boundaries as the centroids were small enough that only ~3% of the centroids intersected between multiple service areas.</p>
+    <hr />
+      <footer>
       <div style="position:absolute;bottom:0;width:100%;text-align:right;">
         &copy; UCSD Data Science
       </div>
